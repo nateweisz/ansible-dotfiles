@@ -1,0 +1,18 @@
+- name: Update system packages
+  pacman:
+    upgrade: true
+- name: Install primary system utilites
+  pacman:
+    state: present
+    with_items:
+      - git
+      - base-devel
+      - cmake
+      - linux-headers
+      - nano
+- name: Install nvidia drivers
+  # still need to do xorg configurations in addition to this 
+  pacman:
+    state: present
+    with_items:
+      -
