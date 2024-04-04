@@ -26,6 +26,6 @@
         when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_output.stdout"
     - name: Configure xorg
       command: nvidia-xconfig
-      when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_ou"
+      when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_output.stdout"
   roles:
     - development
