@@ -8,3 +8,10 @@
       - polybar
       - rofi
 # todo: add other stuff like configuration files here
+- name: Move i3 and polybar configuration files
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/config"
+    dest: "{{ ansible_env.HOME }}/.config/i3/config"
+    force: yes
+  become: yes
+

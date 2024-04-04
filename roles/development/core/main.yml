@@ -12,6 +12,7 @@
       - nano
       - alacritty
       - neofetch # can't forget this core utility
+      - ttf-jetbrains-mono-nerd
 - name: Install nvidia drivers
   # still need to do xorg configurations in addition to this 
   pacman:
