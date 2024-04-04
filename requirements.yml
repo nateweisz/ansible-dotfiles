@@ -1,2 +1,4 @@
 collections:
-  - name: kewlfft.aur
+  with_items:
+    - community.general.pacman
+    - kewlfft.aur
