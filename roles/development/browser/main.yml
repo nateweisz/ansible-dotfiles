@@ -4,4 +4,9 @@
     with_items:
       - firefox
       - torbrowser-launcher
-
+- name: Move user.js to $HOME/.config/firefox/user.js
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/user.js"
+    dest: "{{ ansible_env.HOME }}/.config/firefox/user.js"
+    force: yes
+  become: yes

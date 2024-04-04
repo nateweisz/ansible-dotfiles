@@ -27,6 +27,5 @@
     - name: Configure xorg
       command: nvidia-xconfig
       when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_ou>
-
   roles:
     - development
