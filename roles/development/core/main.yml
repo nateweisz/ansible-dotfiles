@@ -13,9 +13,16 @@
       - alacritty
       - neofetch # can't forget this core utility
       - ttf-jetbrains-mono-nerd
-- name: Install nvidia drivers
-  # still need to do xorg configurations in addition to this 
+- name: Check for NVIDIA GPU
+  command: lspci -k | grep -A 2 -E "(VGA|3D)"
+  register: lspci_output
+  ignore_errors: yes
+- name: Install NVIDIA drivers
   pacman:
+    name: nvidia
     state: present
-    with_items:
-      -
+    when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_output.stdout"
+- name: Configure xorg
+  command: nvidia-xconfig
+  when: "'nvidia' in lspci_output.stdout or 'NVIDIA' in lspci_ou>
+
