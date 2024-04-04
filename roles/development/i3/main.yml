@@ -1,1 +1,10 @@
-- name: 
+- name: Install required i3 packages & other desktop packages
+  pacman:
+    state: present
+    with_items:
+      - i3-wm
+      - nitrogen
+      - dunst
+      - polybar
+      - rofi
+# todo: add other stuff like configuration files here
